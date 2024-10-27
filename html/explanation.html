@@ -1,6 +1,5 @@
 <h1>Introduction</h1>
 <p>The purpose of this page is to help users get more comfortable with how openmath works before, as an intermediary between using the site and working with the source code.</p>
-<p>openmath is a static html site that uses vanilla js and css, we use a few external libraries for graphics and formatting mathematical content.</p>
 <p>Some of the strong pull factors for openmath are that it's incredibly simple, it is a static site that contains mathematical content, while at the same time having the strength of a database by being able to refer to other content located in other files without being a dynamic site.</p>
 <p>We manage to do this by lazily using fetch requests in unison with <code>document.getElementById</code> calls, which indirectly induces a type of filesystem database.</p>
 <p>For example suppose that we have a knowledge link on <code>A.html</code> pointing to some knowledge located at <code>B.html#definition-somedef</code>, then we fetch the html from <code>B.html</code>, parse it into a document, then use <code>document.getElementById("definition-somedef")</code> on that document, and inject the resulting element back into <code>A.html</code> and then re-run MathJax on that element.</p>
